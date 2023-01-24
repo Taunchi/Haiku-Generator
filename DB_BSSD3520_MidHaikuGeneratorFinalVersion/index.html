@@ -1,0 +1,154 @@
+<!-- dboyer2@live.nhmu.edu, Haiku Generator-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Loading scripts. -->
+        <script src="word.js"></script>
+        <script src="main.js"></script>
+        <title>generateHaiku</title>
+        <!-- Setting attributes of page items. -->
+        <style type = "text/css">
+            
+            h1 {
+                font-family: sans-serif;
+                font-size: 45;
+                color:dimgrey;
+                text-align: center;
+                border-color: black;
+                border-width: 5px;
+                border-style: groove;
+                background-color: gainsboro;
+            }
+            h2 {
+                text-align: center;
+            }
+            
+            #haiku {
+                
+                background-color:darkgray;
+                width: 700px;
+                height: 700px;
+                margin:auto;
+                align-self: center;
+                align-content: center;
+            }
+            #haikuFiveOne {
+                background-color: aliceblue;
+                font-size: 80;
+                text-align: center;
+                font-family:cursive;
+                font-weight: 50;
+                resize: none;
+                width: 500px;
+                height:auto;
+                position:inherit;
+                margin-bottom: 25px;
+                margin-top: 100px;
+                shape-inside:
+            }
+            #haikuSeven {
+                background-color: azure;
+                font-size: 80;
+                text-align: center;
+                font-family:cursive;
+                font-weight: 50;
+                resize: none;
+                width: 500px;
+                height:auto;
+                position:inherit;
+                margin-bottom: 25px;
+            }
+            #haikuFiveTwo {
+                background-color: aliceblue;
+                font-size: 80;
+                text-align: center;
+                font-family:cursive;
+                font-weight: 50;
+                resize: none;
+                width: 500px;
+                height:auto;
+                position:inherit;
+                margin-bottom: 25px;
+            }
+            /* Styling buttons */
+            #submit {
+                font-size: 20px;
+                text-decoration-color: azure;
+                background-color: #32CD32;
+                border: groove;
+                color: white;
+                padding: 15px 25px;
+                margin-right: 20px;
+                margin-top: 10px;
+                text-align: center;
+                display: inline;
+            }
+            #reset {
+                font-size: 20px;
+                text-decoration-color: lightsteelblue;
+                background-color: #C0C0C0;
+                border: groove;
+                color: white;
+                padding: 15px 25px;
+                margin-left: 20px;
+                margin-top: 10px;
+                text-align: center;
+                display: inline;
+            }
+            #newHaiku {
+                font-size: 20px;
+                text-decoration-color: azure;
+                background-color: #32CD32;
+                border: groove;
+                color: white;
+                padding: 15px 25px;
+                margin-right: 20px;
+                margin-top: 10px;
+                text-align: center;
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <center><h1> Generate Haiku</h1></center>
+        <!-- Form for word and syllable count. -->
+        <div id="haikuFormDiv">
+            <form id="haikuForm">
+                <center>
+                    <fieldset style="width:300px">
+                        <legend><h1>Pick Word</h1></legend>
+                        <label>Your Word: </label> <br>
+                        <input id="usrWord" type="text" placeholder="Summer" pattern="[a-zA-Z]+" required><br>
+                        <label>Word Type: </label> <br>
+                        <select size="6" id="wType" style="height: 20px" required>
+                            <option>Noun</option>
+                            <option>Pronoun</option>
+                            <option>Verb</option>
+                            <option>Adverb</option>
+                            <option>Adjective</option>
+                            <option>Preposition</option>
+                        </select> <br> <!-- Part of speech selection -->
+                        <label>Syllable Count: </label> <br>
+                        <select size="7" id="sCount" style="height: 45px" required>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select> <br> <!-- Syllable count selection -->
+                        <button id="submit" type="button" onclick="formSubmitted()">Generate</button> <button id="reset" type="reset"> Reset </button>
+                    </fieldset>
+                </center>
+            </form>
+        </div>
+        
+        <div id="haiku" style="display: none">
+            <h1> Your Haiku</h1>
+            <h2>
+                <textarea id="haikuFiveOne" disabled> Haiku 1</textarea> <br>
+                <textarea id="haikuSeven" disabled></textarea> <br>
+                <textarea id="haikuFiveTwo" disabled></textarea> <br>
+                <button id="newHaiku" type="button" onclick="generateNewHaiku()"> New Haiku </button>
+            </h2>
+        </div>
+    </body>
+</html>
